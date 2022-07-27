@@ -1,0 +1,22 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  flex: 0.2;
+  height: 100vh;
+  background-color: var(--bgDark);
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.logo {
+  padding-left: 10px;
+}
+
+.nav-link:hover {
+  background-color: var(--skyBlue) !important;
+}
