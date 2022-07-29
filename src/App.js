@@ -5,7 +5,6 @@ import "./App.css";
 import {
   CryptoDetails,
   Cryptocurrencies,
-  Exchanges,
   Footer,
   Homepage,
   News,
@@ -40,7 +39,6 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Homepage />} />
 
-            <Route exact path="/exchanges" element={<Exchanges />} />
 
             <Route
               exact

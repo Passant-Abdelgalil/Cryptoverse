@@ -22,11 +22,6 @@ const RoutesMenu = ({ selectedKey, changeSelectedKey }) => {
       title: "Cryptocurrencies",
     },
     {
-      icon: <MoneyCollectOutlined />,
-      path: "/exchanges",
-      title: "Exchanges",
-    },
-    {
       icon: <BulbFilled />,
       path: "/news",
       title: "News",
