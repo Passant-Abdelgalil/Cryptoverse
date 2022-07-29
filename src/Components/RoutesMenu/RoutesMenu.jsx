@@ -12,22 +12,22 @@ import React from "react";
 const RoutesMenu = ({ selectedKey, changeSelectedKey }) => {
   const items = [
     {
-      icon: HomeOutlined,
+      icon: <HomeOutlined />,
       path: "/",
       title: "Home",
     },
     {
-      icon: FundOutlined,
+      icon: <FundOutlined />,
       path: "/cryptocurrencies",
       title: "Cryptocurrencies",
     },
     {
-      icon: MoneyCollectOutlined,
+      icon: <MoneyCollectOutlined />,
       path: "/exchanges",
       title: "Exchanges",
     },
     {
-      icon: BulbFilled,
+      icon: <BulbFilled />,
       path: "/news",
       title: "News",
     },
@@ -39,9 +39,9 @@ const RoutesMenu = ({ selectedKey, changeSelectedKey }) => {
       mode="inline"
       theme="dark"
       selectedKeys={[selectedKey]}
-      items={items.map((item, index) => ({
+      items={items?.map((item, index) => ({
         key: String(index + 1),
-        icon: React.createElement(item.icon),
+        icon: item.icon,
         label: <Link to={item.path}>{item.title}</Link>,
       }))}
     />

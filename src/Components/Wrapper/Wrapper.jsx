@@ -4,7 +4,13 @@ import { Result, Spin } from "antd";
 const Wrapper = ({ isLoading, isError, error, children }) => {
   if (isLoading) return <Spin tip="Loading..."></Spin>;
   if (isError)
-    return (
+    return error.status === "FETCH_ERROR" ? (
+      <Result
+        status="error"
+        title="Couldn't Connect"
+        subTitle="Check your Connection"
+      />
+    ) : (
       <Result
         status={error?.status}
         title={error?.data?.code}
