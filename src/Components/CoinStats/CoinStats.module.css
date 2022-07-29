@@ -1,0 +1,47 @@
+
+.coin-stats__heading__title {
+  text-transform: capitalize;
+}
+
+.coin-stats__heading__paragraph {
+  font-size: 1rem;
+}
+
+.coin-stat__content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+.coin-stat__content:not(:last-child):before {
+  content: "";
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.coin-stat__name {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  flex-grow: 1;
+}
+.coin-stat__text {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-left: 10px;
+}
+.coin-stat__icon {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  display: inline-block;
+}
+.coin-stat__value {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 1.1rem;
+}

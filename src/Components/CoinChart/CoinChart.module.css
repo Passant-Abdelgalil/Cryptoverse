@@ -1,0 +1,25 @@
+.chart-heading {
+  padding: 10px 0;
+}
+
+.chart-heading__title {
+  color: var(--skyBlue) !important;
+  margin: 0 !important;
+}
+
+.chart-heading__price {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+}
+.price-change,
+.current-price {
+  margin: 0 !important;
+}
+
+.chart-container{
+  position: relative;
+  height: 50vh;
+}

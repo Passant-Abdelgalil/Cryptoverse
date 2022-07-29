@@ -1,5 +1,6 @@
 :root {
   --text-primary: #000;
+  --text-secondary: rgba(0, 0, 0, 0.45);
   --bgPrimary: #fff;
   --bgSecondaty: #f9f9f9;
   --pink: #0071bd;

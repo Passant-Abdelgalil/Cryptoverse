@@ -18,6 +18,7 @@ const News = ({ simplified }) => {
     data: cryptoNews,
     isLoading,
     isError,
+    error,
   } = useGetCryptoNewsQuery({ newsCategory, count });
 
   const { data: cryptos } = useGetCryptosQuery(100);
@@ -32,7 +33,7 @@ const News = ({ simplified }) => {
   }));
 
   return (
-    <Wrapper isLoading={isLoading} isError={isError}>
+    <Wrapper isLoading={isLoading} isError={isError} error={error}>
       <Row gutter={[10, 10]} className={styles["row"]}>
         {!simplified && (
           <Col span={24}>

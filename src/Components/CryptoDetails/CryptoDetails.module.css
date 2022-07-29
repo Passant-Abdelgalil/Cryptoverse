@@ -1,0 +1,32 @@
+.coin-link {
+}
+.coin-details {
+  margin-top: 100px;
+}
+.coin-details__heading {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+.coin-details__name {
+  color: var(--skyBlue) !important;
+}
+.coin-details__intro {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+.coin-details__body {
+  padding-top: 20px;
+}
+.coin-details--select {
+  min-width: 12rem;
+}
+.coin-details__stats > :global(.ant-col) {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  min-width: 250px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

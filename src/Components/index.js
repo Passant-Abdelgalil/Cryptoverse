@@ -8,3 +8,5 @@ export { default as Footer } from "./Footer/Footer";
 export { default as RoutesMenu } from "./RoutesMenu/RoutesMenu";
 export { default as StatsComponent } from "./Stats/Stats";
 export { default as Wrapper } from "./Wrapper/Wrapper";
+export { default as CoinChart } from "./CoinChart/CoinChart";
+export { default as CoinStats } from "./CoinStats/CoinStats";

@@ -9,7 +9,12 @@ import { useGetCryptosQuery } from "../../services/cryptoAPI";
 
 const Cryptocurrencies = (props) => {
   const count = props.simplified ? 10 : 100;
-  const { data: cryptosList, isLoading, isError } = useGetCryptosQuery(count);
+  const {
+    data: cryptosList,
+    isLoading,
+    isError,
+    error,
+  } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -22,7 +27,7 @@ const Cryptocurrencies = (props) => {
   }, [cryptosList, searchTerm]);
 
   return (
-    <Wrapper isLoading={isLoading} isError={isError}>
+    <Wrapper isLoading={isLoading} isError={isError} error={error}>
       {!props.simplified && (
         <div className={styles["search-crypto"]}>
           <Input
@@ -59,9 +64,9 @@ const Cryptocurrencies = (props) => {
                 }
                 hoverable
               >
-                <p>Price: {millify(currency.price)}</p>
-                <p>Market Cap: {millify(currency.marketCap)}</p>
-                <p>Daily Change: {millify(currency.change)}$</p>
+                <p>Price: {millify(+currency.price)}</p>
+                <p>Market Cap: {millify(+currency.marketCap)}</p>
+                <p>Daily Change: {millify(+currency.change)}$</p>
               </Card>
             </Link>
           </Col>
