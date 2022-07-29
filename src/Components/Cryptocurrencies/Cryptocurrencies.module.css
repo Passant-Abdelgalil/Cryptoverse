@@ -1,5 +1,6 @@
 .crypto-image {
-  width: 2rem;
+  width: 40px;
+  height: 40px;
 }
 
 /* start of rules to force the crypto grid cells to have equal height/width */ 

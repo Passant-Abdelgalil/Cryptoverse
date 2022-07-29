@@ -10,7 +10,7 @@ const { Title } = Typography;
 const Homepage = () => {
   return (
     <Fragment>
-      <Title level={2} className={styles["heading"]}>
+      <Title level={1} className={styles["heading"]}>
         Global Crypto Stats
       </Title>
       <StatsComponent />

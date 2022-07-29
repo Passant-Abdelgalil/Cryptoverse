@@ -1,7 +1,8 @@
-import { Card, Col, Input, Result, Row, Spin } from "antd";
-import { Fragment, useEffect, useState } from "react";
+import { Card, Col, Input, Row } from "antd";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
+import { Wrapper } from "../../Components";
 import millify from "millify";
 import styles from "./Cryptocurrencies.module.css";
 import { useGetCryptosQuery } from "../../services/cryptoAPI";
@@ -20,13 +21,8 @@ const Cryptocurrencies = (props) => {
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
 
-  if (isLoading) return <Spin tip="Loading..."></Spin>;
-  if (isError)
-    return (
-      <Result status="500" title="500" subTitle="Sorry, something went wrong" />
-    );
   return (
-    <Fragment>
+    <Wrapper isLoading={isLoading} isError={isError}>
       {!props.simplified && (
         <div className={styles["search-crypto"]}>
           <Input
@@ -71,7 +67,7 @@ const Cryptocurrencies = (props) => {
           </Col>
         ))}
       </Row>
-    </Fragment>
+    </Wrapper>
   );
 };
 

@@ -1,3 +1,7 @@
+.select-news {
+  min-width: 200px;
+}
+
 .news-card {
   display: flex; /* to set ant-card-body 's flex-grow to 1*/
   height: 100%; /* to occupy all Col height*/
@@ -23,7 +27,10 @@
   justify-content: space-between;
   gap: 10px;
 }
-
+.news-header__image {
+  width: 100px;
+  height: 100px;
+}
 .news-description {
   flex-grow: 1; /* to push the news footer to the bottom */
   color: black;
