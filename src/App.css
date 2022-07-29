@@ -15,18 +15,47 @@
   box-sizing: border-box;
 }
 
-.app {
+/* .app {
   display: flex;
-  /* overflow: hidden; */
-  flex-flow: row wrap;
-}
-
+   overflow: hidden; 
+   flex-flow: row wrap; 
+} */
 .main {
-  flex: 0.8;
-  width: 100%;
+  margin-left: 265px;
+  flex: 1;
+}
+.app {
+  /* display: flex; */
+  /* flex-flow: row wrap; */
+  /* align-items: flex-start; */
+  height: 100vh;
+  overflow-x: hidden;
+  /* flex: 0.8;
+  width: 100%; */
 }
 
+.content {
+  padding: 20px;
+  min-height: auto;
+}
 .routes {
   padding: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .main {
+    flex: 1;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  .main {
+    margin: 0;
+  }
 }
 

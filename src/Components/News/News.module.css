@@ -1,0 +1,40 @@
+.news-card {
+  display: flex; /* to set ant-card-body 's flex-grow to 1*/
+  height: 100%; /* to occupy all Col height*/
+}
+/* style news row for responsivness */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.news-col {
+  min-width: 350px; /* to avoid overlapping between cols in antd grid system*/
+}
+
+.news-card__wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+}
+
+.news-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.news-description {
+  flex-grow: 1; /* to push the news footer to the bottom */
+  color: black;
+  padding: 10px 0;
+}
+
+.news-footer {
+  display: flex;
+  align-items: center;
+}
+
+.news-footer__avatar {
+  margin-right: 10px;
+}

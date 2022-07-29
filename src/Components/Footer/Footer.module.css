@@ -6,3 +6,7 @@
   z-index: 100;
   color: white;
 }
+
+:global(.ant-layout-footer){
+  padding: 0;
+}

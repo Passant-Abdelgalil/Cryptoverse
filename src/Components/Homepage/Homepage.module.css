@@ -1,0 +1,15 @@
+.home-heading-container {
+    padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.show-more {
+  margin-left: auto;
+}
+@media screen and (max-width: 500px) {
+  .home-heading-container {
+    flex-direction: column;
+  }
+}

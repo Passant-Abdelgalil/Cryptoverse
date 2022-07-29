@@ -1,10 +1,22 @@
 .sidebar {
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 0;
+  bottom: 0;
   align-self: flex-start;
-  flex: 0.2;
+  /* flex: 0.2 !important; */
+  min-width: auto !important;
+  max-width: none !important;
+  width: auto !important;
   height: 100vh;
+  z-index: 200;
   background-color: var(--bgDark);
+}
+:global(.ant-layout-sider-collapsed) {
+  flex: 0 0 0px !important;
+  max-width: 0px !important;
+  min-width: 0px !important;
+  width: 0px !important;
 }
 .logo-container {
   display: flex;
@@ -20,3 +32,24 @@
 .nav-link:hover {
   background-color: var(--skyBlue) !important;
 }
+
+@media screen and (min-width: 992px) {
+  .sidebar {
+    flex: 0.2 !important;
+    min-width: auto !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+}
+/* @media screen and (max-width: 500px) {
+  .sidebar {
+    flex-grow: 1;
+    height: fit-content;
+    align-self: auto;
+  }
+  .nav-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+} */
