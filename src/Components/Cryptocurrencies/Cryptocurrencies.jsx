@@ -43,7 +43,7 @@ const Cryptocurrencies = (props) => {
             xs={24}
             sm={12}
             md={8}
-            lg={6}
+            xl={6}
             key={currency.uuid}
             className={styles["crypto-col"]}
           >
@@ -53,7 +53,7 @@ const Cryptocurrencies = (props) => {
             >
               <Card
                 title={`${currency.rank}. ${currency.name}`}
-                className={styles['crypto-card']}
+                className={styles["crypto-card"]}
                 extra={
                   <img
                     className={styles["crypto-image"]}

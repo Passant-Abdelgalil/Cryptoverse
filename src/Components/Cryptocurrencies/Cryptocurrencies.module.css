@@ -2,7 +2,7 @@
   width: 2rem;
 }
 
-/* start of rules to force the crypto grid cells to have equal height/width */
+/* start of rules to force the crypto grid cells to have equal height/width */ 
 .crypto-col {
   display: flex;
 }
@@ -13,7 +13,13 @@
   display: flex;
   flex-grow: 1;
 }
-/* end of rules to force the crypto grid cells to have equal height/width */
+
+/* end of rules to force the crypto grid cells to have equal height/width
+
+/* to prevent long titles from breaking the layout */
+.crypto-item :global(.ant-card-head-title) {
+  white-space: normal;
+}
 
 .search-crypto {
   padding: 20px 0;
