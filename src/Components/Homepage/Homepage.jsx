@@ -28,7 +28,7 @@ const Homepage = () => {
           Latest Crypto News
         </Title>
         <Title level={3} className={styles["show-more"]}>
-          <Link to="/cryptocurrencies">Show More</Link>
+          <Link to="/news">Show More</Link>
         </Title>
       </div>
 
