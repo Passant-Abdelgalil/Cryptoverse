@@ -5,12 +5,13 @@ import {
   LineElement,
   LinearScale,
   PointElement,
+  TimeScale,
   Title,
   Tooltip,
 } from "chart.js";
 import { Col, Row, Typography } from "antd";
 
-import { Chart } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import React from "react";
 import { Wrapper } from "..";
 import styles from "./CoinChart.module.css";
@@ -20,6 +21,7 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+  TimeScale,
   Title,
   Tooltip,
   Legend
@@ -91,7 +93,7 @@ const LineChart = ({
         </Col>
       </Row>
       <div className={styles["chart-container"]}>
-        <Chart type="line" data={data} options={options} />
+        <Line data={data} options={options} />
       </div>
     </Wrapper>
   );

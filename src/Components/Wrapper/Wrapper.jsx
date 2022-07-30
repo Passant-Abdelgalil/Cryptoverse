@@ -3,7 +3,6 @@ import { Result, Spin } from "antd";
 
 const Wrapper = ({ isLoading, isError, error, children }) => {
   if (isLoading) return <Spin tip="Loading..."></Spin>;
-  console.log(error);
 
   if (isError)
     return error.status in ["403", "404", "500"] ? (

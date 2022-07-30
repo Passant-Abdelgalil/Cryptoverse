@@ -30,3 +30,39 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.coin-details__title{
+  color: var(--skyBlue)  !important;
+}
+.coin-details__description h1{
+  font-size: 2.5rem;
+}
+.coin-details__description h2{
+  font-size: 2rem;
+}
+.coin-details__description h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.coin-details__description p{
+  line-height: 2;
+  font-size: 1rem;
+  color: #333
+}
+
+.coin-details__links{
+  padding: 20px;
+  height: fit-content;
+  border: 1px solid #ddd;
+  margin: auto;
+}
+.coin-link{
+  padding: 10px 0;
+}
+.coin-link:not(:last-child){
+  border-bottom: 1px solid #ddd;
+}
+.coin-link__name{
+  margin: 0 !important;
+}

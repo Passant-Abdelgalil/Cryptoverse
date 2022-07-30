@@ -23,7 +23,6 @@ import { useParams } from "react-router";
 import { useState } from "react";
 
 const { Title } = Typography;
-const { Option } = Select;
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
@@ -120,7 +119,7 @@ const CryptoDetails = () => {
               statistics, market cap and supply
             </p>
           </Col>
-          <Col className={styles['coin-details__body']}>
+          <Col className={styles["coin-details__body"]}>
             <Select
               defaultValue="7d"
               className={styles["coin-details--select"]}
@@ -130,7 +129,7 @@ const CryptoDetails = () => {
             />
             <CoinChart
               coinHistory={coinHistory}
-              currentPrice={millify(+cryptoDetails?.price)}
+              currentPrice={millify(+cryptoDetails?.price || 0)}
               coinName={cryptoDetails?.name}
               isLoading={historyIsLoading}
               isError={historyIsError}
@@ -156,32 +155,51 @@ const CryptoDetails = () => {
                 />
               </Col>
             </Row>
-            <Col className={styles["coin-desc-link"]}>
-              <Row className={styles["coin-desc"]}>
-                <Title level={2} className={styles["coin-details-heading"]}>
+            <Row
+              gutter={16}
+              wrap
+              justify="space-between"
+              className={styles["coin-details__desc-link"]}
+            >
+              <Col
+                xs={24}
+                lg={14}
+                className={styles["coin-details__description"]}
+              >
+                <Title level={2} className={styles["coin-details__title"]}>
                   What is {cryptoDetails?.name}
                 </Title>
                 {HTMLReactParser(cryptoDetails?.description)}
-              </Row>
-              <Col className={styles["coin-links"]}>
-                <Title level={3} className={styles["coin-details-heading"]}>
+              </Col>
+              <Col xs={24} md={10} xl={8} className={styles["coin-details__links"]}>
+                <Title level={2} className={styles["coin-details__title"]}>
                   {cryptoDetails?.name} Links
                 </Title>
-                {cryptoDetails?.links?.map((link, index) => (
-                  <Row
-                    className={styles["coin-link"]}
-                    key={`${link.name}-${String(index + 1)}`}
-                  >
-                    <Title level={5} className={styles["link-name"]}>
-                      {link.type}
-                    </Title>
-                    <a href={link.url} target="_blank" rel="noreferrer">
-                      {link.name}
-                    </a>
-                  </Row>
-                ))}
+                <Col className={styles["coin-details__links__content"]}>
+                  {cryptoDetails?.links?.map((link, index) => (
+                    <Row
+                      wrap
+                      justify="space-between"
+                      align="middle"
+                      className={styles["coin-link"]}
+                      key={`${link.name}-${String(index + 1)}`}
+                    >
+                      <Title level={5} className={styles["coin-link__name"]}>
+                        {link.type}
+                      </Title>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles["coin-link__value"]}
+                      >
+                        {link.name}
+                      </a>
+                    </Row>
+                  ))}
+                </Col>
               </Col>
-            </Col>
+            </Row>
           </Col>
         </Col>
       )}
