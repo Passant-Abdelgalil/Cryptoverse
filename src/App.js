@@ -10,27 +10,17 @@ import {
   News,
   RoutesMenu,
   Sidebar,
+  PageNotFound,
 } from "./Components";
 /* React imports */
 import { Route, Routes } from "react-router-dom";
 
 /* Ant Design imports */
 import { Layout } from "antd";
-import { useState } from "react";
 
 const { Footer: LayoutFooter, Content } = Layout;
 const App = () => {
-  const [selectedKey, setSelectedKey] = useState("0");
-
-  const changeSelectedKey = ({ key }) => {
-    setSelectedKey(key);
-  };
-  const Menu = (
-    <RoutesMenu
-      selectedKey={selectedKey}
-      changeSelectedKey={changeSelectedKey}
-    />
-  );
+  const Menu = <RoutesMenu />;
   return (
     <Layout className="app">
       <Sidebar menu={Menu} />
@@ -38,7 +28,6 @@ const App = () => {
         <Content className="content">
           <Routes>
             <Route exact path="/" element={<Homepage />} />
-
 
             <Route
               exact
@@ -49,11 +38,13 @@ const App = () => {
             <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
 
             <Route exact path="/news" element={<News />} />
+
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Content>
 
         <LayoutFooter>
-        <Footer />
+          <Footer />
         </LayoutFooter>
       </Layout>
     </Layout>

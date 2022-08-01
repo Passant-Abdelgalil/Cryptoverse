@@ -171,7 +171,12 @@ const CryptoDetails = () => {
                 </Title>
                 {HTMLReactParser(cryptoDetails?.description)}
               </Col>
-              <Col xs={24} md={10} xl={8} className={styles["coin-details__links"]}>
+              <Col
+                xs={24}
+                md={10}
+                xl={8}
+                className={styles["coin-details__links"]}
+              >
                 <Title level={2} className={styles["coin-details__title"]}>
                   {cryptoDetails?.name} Links
                 </Title>

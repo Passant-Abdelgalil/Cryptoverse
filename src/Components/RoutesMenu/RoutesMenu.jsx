@@ -1,43 +1,46 @@
-import {
-  BulbFilled,
-  FundOutlined,
-  HomeOutlined,
-  MoneyCollectOutlined,
-} from "@ant-design/icons";
+import { BulbFilled, FundOutlined, HomeOutlined } from "@ant-design/icons";
 
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Menu } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const RoutesMenu = ({ selectedKey, changeSelectedKey }) => {
-  const items = [
-    {
-      icon: <HomeOutlined />,
-      path: "/",
-      title: "Home",
-    },
-    {
-      icon: <FundOutlined />,
-      path: "/cryptocurrencies",
-      title: "Cryptocurrencies",
-    },
-    {
-      icon: <BulbFilled />,
-      path: "/news",
-      title: "News",
-    },
-  ];
+const items = [
+  {
+    icon: <HomeOutlined />,
+    path: "/",
+    title: "Home",
+  },
+  {
+    icon: <FundOutlined />,
+    path: "/cryptocurrencies",
+    title: "Cryptocurrencies",
+  },
+  {
+    icon: <BulbFilled />,
+    path: "/news",
+    title: "News",
+  },
+];
+const RoutesMenu = () => {
+  const location = useLocation();
+  const [selectedKey, setSelectedKey] = useState();
+  useEffect(() => {
+    const index = items.findIndex((item) => {
+      return item.path === location.pathname;
+    });
+    setSelectedKey((index+1).toString());
+  }, [location.pathname]);
 
+  console.log(location.pathname, selectedKey);
   return (
     <Menu
-      onClick={changeSelectedKey}
       mode="inline"
       theme="dark"
       selectedKeys={[selectedKey]}
       items={items?.map((item, index) => ({
         key: String(index + 1),
         icon: item.icon,
-        label: <Link to={item.path}>{item.title}</Link>,
+        label: <NavLink to={item.path}>{item.title}</NavLink>,
       }))}
     />
   );

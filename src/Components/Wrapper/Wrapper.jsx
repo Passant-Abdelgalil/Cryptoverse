@@ -3,9 +3,8 @@ import { Result, Spin } from "antd";
 
 const Wrapper = ({ isLoading, isError, error, children }) => {
   if (isLoading) return <Spin tip="Loading..."></Spin>;
-
   if (isError)
-    return error.status in ["403", "404", "500"] ? (
+    return [403, 404, 500].includes(error?.status) ?(
       <Result
         status={error?.status}
         title={error?.data?.code}

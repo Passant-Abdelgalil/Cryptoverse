@@ -9,3 +9,4 @@ export { default as StatsComponent } from "./Stats/Stats";
 export { default as Wrapper } from "./Wrapper/Wrapper";
 export { default as CoinChart } from "./CoinChart/CoinChart";
 export { default as CoinStats } from "./CoinStats/CoinStats";
+export { default as PageNotFound } from "./PageNotFound/PageNotFound";
