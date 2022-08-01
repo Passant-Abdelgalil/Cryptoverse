@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 /* React Imports */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 /* Store */
 import store from "./store/store";
 
