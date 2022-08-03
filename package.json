@@ -14,7 +14,6 @@
     "html-react-parser": "^3.0.1",
     "millify": "^5.0.0",
     "moment": "^2.29.4",
-    "netlify-cli": "^10.14.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
@@ -24,7 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies":{
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "netlify-cli": "^10.14.0"
   },
   "scripts": {
     "start": "react-scripts start",
