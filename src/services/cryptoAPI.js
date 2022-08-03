@@ -1,27 +1,42 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const crpytoApiHeaders = {
-  "X-RapidAPI-Key": "11995b252dmshc1a5127a3ef792cp115650jsn1b43dd895e69",
-  "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-};
-
 const baseUrl = "https://coinranking1.p.rapidapi.com";
 
-const createRequest = (url) => ({ url, headers: crpytoApiHeaders });
+const handleResponse = async (res) => {
+  const response = await res.json();
+
+  if (response.error) return { error: response.error };
+  return { data: response.data };
+};
 
 export const cryptoApi = createApi({
   reducerPath: "cryptoApi",
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: fetchBaseQuery({
+    baseUrl,
+  }),
   endpoints: (builder) => ({
     getCryptos: builder.query({
-      query: (count) => createRequest(`/coins?limit=${count}`),
+      queryFn: async (arg) => {
+        const res = await fetch(`/api/get-cryptos?limit=${arg}`);
+        return await handleResponse(res);
+      },
     }),
     getCryptoDetails: builder.query({
-      query: (coinId) => createRequest(`/coin/${coinId}`),
+      queryFn: async (arg) => {
+        const res = await fetch(`/api/get-crypto-detail?coinId=${arg}`);
+
+        return await handleResponse(res);
+      },
     }),
     getCryptoHistory: builder.query({
-      query: ({ coinId, timePeriod }) =>
-        createRequest(`/coin/${coinId}/history?timePeriod=${timePeriod}`),
+      queryFn: async (arg) => {
+        const { coinId, timePeriod } = arg;
+        const res = await fetch(
+          `/api/get-crypto-history?coinId=${coinId}&timePeriod=${timePeriod}`
+        );
+
+        return await handleResponse(res);
+      },
     }),
   }),
 });

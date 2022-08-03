@@ -15,11 +15,11 @@ const Cryptocurrencies = (props) => {
     isError,
     error,
   } = useGetCryptosQuery(count);
-  const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
+  const [cryptos, setCryptos] = useState(cryptosList?.coins);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const filteredData = cryptosList?.data?.coins?.filter((coin) =>
+    const filteredData = cryptosList?.coins?.filter((coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 

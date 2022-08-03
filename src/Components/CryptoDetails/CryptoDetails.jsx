@@ -27,7 +27,8 @@ const { Title } = Typography;
 const CryptoDetails = () => {
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
-  const { data, isLoading, isError, error } = useGetCryptoDetailsQuery(coinId);
+  const response = useGetCryptoDetailsQuery(coinId);
+  const { data, isLoading, isError, error } = response;
   const {
     data: coinHistory,
     isLoading: historyIsLoading,
@@ -37,9 +38,8 @@ const CryptoDetails = () => {
     coinId,
     timePeriod,
   });
-
   const times = ["3h", "24h", "7d", "30d", "3m", "1y", "3y", "5y"];
-  const cryptoDetails = data?.data?.coin;
+  const cryptoDetails = data?.coin;
   const stats = [
     {
       title: "Price to USD",

@@ -1,4 +1,4 @@
-import { Col, Row, Typography } from "antd";
+import { Col, Typography } from "antd";
 import React, { Fragment } from "react";
 
 import styles from "./CoinStats.module.css";

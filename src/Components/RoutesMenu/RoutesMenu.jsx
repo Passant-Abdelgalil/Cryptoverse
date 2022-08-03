@@ -31,7 +31,6 @@ const RoutesMenu = () => {
     setSelectedKey((index+1).toString());
   }, [location.pathname]);
 
-  console.log(location.pathname, selectedKey);
   return (
     <Menu
       mode="inline"

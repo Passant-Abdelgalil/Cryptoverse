@@ -7,8 +7,8 @@ const Wrapper = ({ isLoading, isError, error, children }) => {
     return [403, 404, 500].includes(error?.status) ?(
       <Result
         status={error?.status}
-        title={error?.data?.code}
-        subTitle={error?.data?.message}
+        title={error?.status}
+        subTitle={error?.type}
       />
     ) : (
       <Result

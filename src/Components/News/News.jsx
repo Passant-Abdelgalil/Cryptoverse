@@ -26,12 +26,11 @@ const News = ({ simplified }) => {
   const filterNews = (input, option) => {
     return option.label.toLowerCase().includes(input.toLowerCase());
   };
-  const options = cryptos?.data?.coins?.map((coin) => ({
+  const options = cryptos?.coins?.map((coin) => ({
     label: coin.name,
     value: coin.name,
     id: coin.uuid,
   }));
-
   return (
     <Wrapper isLoading={isLoading} isError={isError} error={error}>
       <Row gutter={[10, 10]} className={styles["row"]}>

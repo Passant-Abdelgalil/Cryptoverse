@@ -7,9 +7,9 @@ import millify from "millify";
 import { useGetCryptosQuery } from "../../services/cryptoAPI";
 
 const Stats = () => {
-  const { data, isLoading, isError, error } = useGetCryptosQuery(10);
-
-  const globalStats = data?.data?.stats;
+  const response = useGetCryptosQuery(10);
+  const { data, isLoading, isError, error } = response;
+  const globalStats = data?.stats;
 
   return (
     <Wrapper isLoading={isLoading} isError={isError} error={error}>

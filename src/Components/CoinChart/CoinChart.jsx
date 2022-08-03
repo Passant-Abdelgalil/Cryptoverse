@@ -37,7 +37,7 @@ const LineChart = ({
   const coinPrice = [];
   const coinTimestamp = [];
 
-  coinHistory?.data?.history?.forEach((value) => {
+  coinHistory?.history?.forEach((value) => {
     coinPrice.push(value.price);
     coinTimestamp.push(new Date(value.timestamp).toLocaleDateString());
   });
@@ -85,7 +85,7 @@ const LineChart = ({
         </Typography.Title>
         <Col className={styles["chart-heading__price"]}>
           <Typography.Title level={5} className={styles["price-change"]}>
-            Change: {coinHistory?.data?.change}%
+            Change: {coinHistory?.change}%
           </Typography.Title>
           <Typography.Title level={5} className={styles["current-price"]}>
             Current {coinName} Price: $ {currentPrice}
