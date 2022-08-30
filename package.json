@@ -24,7 +24,7 @@
   },
   "devDependencies":{
     "react-scripts": "5.0.1",
-    "netlify-cli": "^10.14.0"
+    "netlify-cli": "^11.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
